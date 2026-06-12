@@ -1,6 +1,6 @@
 [project]
 name = "tuomin"
-version = "0.1.1"
+version = "0.1.2"
 description = "Excel 脱敏工具 - 对 xls/xlsx 文件中的个人敏感信息进行替换或重构脱敏"
 readme = "README.md"
 requires-python = ">=3.8"
