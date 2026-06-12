@@ -5,10 +5,12 @@
 ## 安装
 
 ```bash
-pip install tuomin
+uv tool install tuomin
 ```
 
 Python >= 3.8
+
+> 也可使用 `pip install tuomin`
 
 ### 开发
 
