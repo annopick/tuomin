@@ -426,8 +426,8 @@ def build_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
 示例:
-  python tuomin.py data.xlsx --col C:phone:replace
-  python tuomin.py data.xls --sheet Sheet1 --col B:name:reconstruct --col D:idcard:reconstruct --output result.xlsx
+  tuomin data.xlsx --col C:phone:replace
+  tuomin data.xls --sheet Sheet1 --col B:name:reconstruct --col D:idcard:reconstruct --output result.xlsx
 
 支持的字段类型: name, phone, idcard, email, bankcard, address
 脱敏方式: replace (用*替换), reconstruct (生成假数据)

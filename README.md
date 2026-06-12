@@ -5,15 +5,23 @@
 ## 安装
 
 ```bash
-pip install openpyxl xlrd
+pip install tuomin
 ```
 
 Python >= 3.8
 
+### 开发
+
+```bash
+git clone https://github.com/annopick/tuomin.git
+cd tuomin
+uv sync
+```
+
 ## 用法
 
 ```bash
-python tuomin.py <input_file> --col <列字母>:<字段类型>:<脱敏方式> [--col ...] [选项]
+tuomin <input_file> --col <列字母>:<字段类型>:<脱敏方式> [--col ...] [选项]
 ```
 
 ### 参数
@@ -48,19 +56,19 @@ python tuomin.py <input_file> --col <列字母>:<字段类型>:<脱敏方式> [-
 替换单列手机号：
 
 ```bash
-python tuomin.py data.xlsx --col C:phone:replace
+tuomin data.xlsx --col C:phone:replace
 ```
 
 重构多列：
 
 ```bash
-python tuomin.py data.xls --col B:name:reconstruct --col D:idcard:reconstruct --output result.xlsx
+tuomin data.xls --col B:name:reconstruct --col D:idcard:reconstruct --output result.xlsx
 ```
 
 指定 Sheet + 混合脱敏：
 
 ```bash
-python tuomin.py data.xlsx --sheet 员工信息 --col B:name:replace --col C:phone:reconstruct --col E:email:replace
+tuomin data.xlsx --sheet 员工信息 --col B:name:replace --col C:phone:reconstruct --col E:email:replace
 ```
 
 ## 替换规则
