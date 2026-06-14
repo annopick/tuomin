@@ -503,9 +503,9 @@ def main():
             )
             sys.exit(1)
 
-    # 脱敏
+    # 脱敏（跳过第一行表头）
     engine = MaskingEngine()
-    for row in rows:
+    for row in rows[1:]:
         for idx, field_type, method in col_specs:
             if idx < len(row):
                 original = row[idx]

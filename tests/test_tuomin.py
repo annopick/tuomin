@@ -287,7 +287,7 @@ class TestFileIO:
             rows, col_count, _ = read_sheet(path)
 
             engine = MaskingEngine()
-            for row in rows:
+            for row in rows[1:]:
                 row[1] = engine.mask(row[1], "name", "replace")
                 row[2] = engine.mask(row[2], "phone", "replace")
 
@@ -295,6 +295,8 @@ class TestFileIO:
             write_xlsx(rows, out)
 
             result_rows, _, _ = read_sheet(out)
+            assert result_rows[0][1] == "姓名"
+            assert result_rows[0][2] == "手机号"
             assert result_rows[1][1] == "张*"
             assert result_rows[1][2] == "138****1234"
 
